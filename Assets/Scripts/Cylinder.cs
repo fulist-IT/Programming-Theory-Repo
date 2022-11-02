@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Cylinder : Player
+public class Cylinder : Player               // INHERITANCE
 {
-    private float speed = 30;
-    private float jumpForce = 5;
+    private float speed { get; } = 30;       //ENCAPSULATION
+    private float jumpForce { get; } = 5;    //ENCAPSULATION
 
     private Rigidbody rb;
 
@@ -15,14 +15,14 @@ public class Cylinder : Player
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Move();
 
         Jump();
     }
 
-    protected override void Move()
+    protected override void Move()  // POLYMORPHISM
     {
         verticalInput = Input.GetAxis("Vertical");
         rb.AddForce(Vector3.forward * verticalInput * speed * Time.deltaTime);
@@ -30,7 +30,7 @@ public class Cylinder : Player
         base.Move();
     }
 
-    protected override void Jump()
+    protected override void Jump()  // POLYMORPHISM
     {
         if (Input.GetKeyDown(KeyCode.B) && different)
         {

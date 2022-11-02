@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Cube : Player
+public class Cube : Player                  // INHERITANCE
 {
-    private float speed = 40;
-    private float jumpForce = 5;
+    private float speed { get; } = 40;      //ENCAPSULATION
+    private float jumpForce { get; } = 5;   //ENCAPSULATION
 
     private Rigidbody rb;
 
@@ -22,7 +22,7 @@ public class Cube : Player
         Jump();
     }
 
-    protected override void Move()
+    protected override void Move()  // POLYMORPHISM
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
@@ -33,7 +33,7 @@ public class Cube : Player
         base.Move();
     }
 
-    protected override void Jump()
+    protected override void Jump()  // POLYMORPHISM
     {
         if (Input.GetKeyDown(KeyCode.B))
         {

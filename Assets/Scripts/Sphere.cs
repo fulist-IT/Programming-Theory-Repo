@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Sphere : Player
+public class Sphere : Player                // INHERITANCE
 {
-    private float speed = 20;
-    private float jumpForce = 5;
+    public float speed { get; }= 20;        //ENCAPSULATION
+    private float jumpForce { get; } = 5;   //ENCAPSULATION
 
     private Rigidbody rb;
 
@@ -15,14 +15,14 @@ public class Sphere : Player
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Move();
 
         Jump();
     }
 
-    protected override void Move()
+    protected override void Move()  // POLYMORPHISM
     {   
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
@@ -33,7 +33,7 @@ public class Sphere : Player
         base.Move();
     }
 
-    protected override void Jump()
+    protected override void Jump()  // POLYMORPHISM
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
