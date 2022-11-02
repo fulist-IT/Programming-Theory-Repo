@@ -15,7 +15,7 @@ public class Sphere : Player
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
 

@@ -15,7 +15,7 @@ public class Cylinder : Player
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
 

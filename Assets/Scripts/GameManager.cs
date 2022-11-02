@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private List<GameObject> gameObjectsShapes = new List<GameObject>();
-
-    private int index;
+    public List<GameObject> gameObjectsShapes { get; private set; } = new List<GameObject>(); //ENCAPSULATION
+    public int index { get; private set; }                                                    //ENCAPSULATION
 
     private GameObject sphere;
     private GameObject cube;
