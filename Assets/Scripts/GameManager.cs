@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //private List<string> nameShapes = new List<string>();
     private List<GameObject> gameObjectsShapes = new List<GameObject>();
 
     private int index;
@@ -15,10 +14,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //nameShapes.Add("Sphere");
-        //nameShapes.Add("Cube");
-        //nameShapes.Add("Cylinder");
-
         listOfShapes();
     }
 
@@ -32,6 +27,8 @@ public class GameManager : MonoBehaviour
         ShapeSwap();
     }
 
+
+
     private List<GameObject> listOfShapes()
     {
         sphere = GameObject.Find("Sphere");
@@ -44,7 +41,6 @@ public class GameManager : MonoBehaviour
 
         return gameObjectsShapes;
     }
-
 
     private void FirstShapeActive()
     {
@@ -60,14 +56,18 @@ public class GameManager : MonoBehaviour
 
     private void ShapeSwap()
     {
+        Vector3 pos;
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            pos = gameObjectsShapes[index].transform.position;
+
             gameObjectsShapes[index].SetActive(false);
             index++;
 
             if (index < gameObjectsShapes.Count)
             {
                 gameObjectsShapes[index].SetActive(true);
+                gameObjectsShapes[index].transform.position = pos;
             }
             else
             {
