@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Sphere : Player
@@ -43,6 +40,5 @@ public class Sphere : Player
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             base.Jump();
         }
-        
     }
 }

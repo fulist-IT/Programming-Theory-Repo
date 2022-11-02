@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cylinder : Player
@@ -41,7 +39,7 @@ public class Cylinder : Player
 
             base.Jump();
         }
-        if (Input.GetKeyDown(KeyCode.B) && !different)
+        else if (Input.GetKeyDown(KeyCode.B) && !different)
         {
             rb.AddForce(Vector3.right * -jumpForce, ForceMode.Impulse);
             different = true;
