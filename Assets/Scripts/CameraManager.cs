@@ -6,7 +6,7 @@ public class CameraManager : MonoBehaviour
 {
     private GameManager gameManager;
 
-    private Vector3 offset = new Vector3(0f, 0.717f, -0.6f);
+    private Vector3 offset { get; } = new Vector3(0f, 0.717f, -0.6f);   //ENCAPSULATION
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class CameraManager : MonoBehaviour
 
     void LateUpdate()
     {
-        Visual();
+        Visual();   // ABSTRACTION
     }
 
     private void Visual()

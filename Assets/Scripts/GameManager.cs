@@ -12,17 +12,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        listOfShapes();
+        listOfShapes(); // ABSTRACTION
     }
 
     private void Start()
     {
-        FirstShapeActive();
+        FirstShapeActive(); // ABSTRACTION
     }
 
     private void Update()
     {
-        ShapeSwap();
+        ShapeSwap();    // ABSTRACTION
     }
 
 

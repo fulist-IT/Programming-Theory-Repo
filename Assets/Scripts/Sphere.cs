@@ -17,9 +17,9 @@ public class Sphere : Player                // INHERITANCE
 
     void Update()
     {
-        Move();
+        Move(); // ABSTRACTION
 
-        Jump();
+        Jump(); // ABSTRACTION
     }
 
     protected override void Move()  // POLYMORPHISM
